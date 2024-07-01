@@ -1,0 +1,74 @@
+.Android {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #111;
+}
+
+.box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.box .group {
+    position: relative;
+    transform: rotate(-30deg);
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.iconContainer {
+    display: flex;
+    gap: 0.5em;
+    font-size: 4em;
+    width: 200vw;
+    animation: move 80s linear infinite;
+}
+
+@keyframes move {
+    0%,
+    100% {
+        transform: translateX(-100vw);
+    }
+
+    50% {
+        transform: translateX(0vw);
+    }
+}
+
+.iconContainer:nth-child(even){
+    animation: move2 80s linear infinite;
+}
+@keyframes move2 {
+    0%,
+    100% {
+        transform: translateX(0vw);
+    }
+
+    50% {
+        transform: translateX(-100vw);
+    }
+}
+
+.iconContainer i {
+    cursor: default;
+    user-select: none;
+    transition: 2s;
+    opacity: 0.35;
+    -webkit-text-stroke: 1px var(--scrollbar-bar-color);
+}
+
+.iconContainer i:hover {
+    color: var(--scrollbar-bar-color);
+    transition: 0s;
+    -webkit-text-stroke: 1px transparent;
+    opacity: 1;
+    text-shadow: 0 0 120px var(--scrollbar-bar-color);
+}

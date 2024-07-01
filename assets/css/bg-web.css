@@ -1,0 +1,119 @@
+.bg {
+    height: 100vh;
+    background: black;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --delay-step: 0.1s;
+}
+
+.Internet {
+    position: absolute;
+    top: 0;
+    left: 60px;
+    background: url(../images/mundo-night.png);
+    background-repeat: no-repeat;
+    width: 1425px;
+    height: 1325px;
+    border-radius: 100%;
+    transform: translateY(-700px);
+}
+
+.BgCard {
+    position: relative;
+    height: var(--bg-h);
+    width: var(--bg-w);
+    background-color: transparent;
+    border-radius: 30px;
+    -webkit-animation: pulse 2s infinite;
+    animation: pulse 1.5s infinite;
+    transition: 1.2s;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 var(--scrollbar-bar-color);
+    }
+
+    70% {
+        box-shadow: 0 0 0 70px rgb(218 103 68 / 0%);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(218, 103, 68, 0);
+    }
+}
+
+.center_div {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.data {
+    display: flex;
+    width: 1.8rem;
+    height: 30px;
+    margin: 0 20px;
+    border-radius: 0.4rem;
+    animation: wave 2.6s linear infinite;
+    transform-origin: center;
+    background-color: var(--scrollbar-bar-color);
+    animation-delay: calc(var(--delay-step) * var(--index-bar));
+
+}
+
+.data::after {
+    content: '';
+    height: 15px;
+    width: 0.9em;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(50%, 50%);
+    border-radius: 5px;
+}
+
+@keyframes wave {
+    0% {
+        transform: scale(0);
+        filter: blur(80px);
+    }
+
+    25% {
+        transform: scale(0);
+        filter: blur(50px);
+    }
+
+    50% {
+        transform: scale(1);
+        filter: blur(25px);
+    }
+
+    25% {
+        transform: scale(0);
+        filter: blur(2px);
+    }
+
+    100% {
+        transform: scale(0);
+        filter: blur(0px);
+    }
+}
+
+.HideCode {
+    position: absolute;
+    bottom: 20px;
+    left: var(--PosX);
+    color: transparent;
+    font-size: xx-large;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.HideCode:hover {
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+    transition: 4s;
+}
